@@ -39,6 +39,12 @@ public class StudentRestController {
             
             // index into the list
 
+            // check the studentId list size
+
+            if ((studentId >= theStudents.size()) || (studentId < 0)) {
+                throw new StudentNotFoundException("Student " + studentId + " is not found");
+            }
+
             return theStudents.get(studentId);
         }
 }
